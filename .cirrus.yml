@@ -1,6 +1,4 @@
 env:
-    # Sync Repository
-    REPO_SYNC: https://github.com/Evolution-X/manifest.git
 
     # Config
     CONFIG: config.sh
