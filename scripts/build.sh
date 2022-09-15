@@ -63,7 +63,7 @@ breakfast fajita
 # Build!
 echo 'Start Build!'
 croot
-brunch fajita -j16
+brunch fajita
 
 # Exit
 exit 0
