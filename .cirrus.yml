@@ -1,0 +1,35 @@
+env:
+    # Sync Repository
+    REPO_SYNC: https://github.com/Evolution-X/manifest.git
+
+    # Config
+    CONFIG: config.sh
+
+    # Telegram
+    TG_CHAT_ID: -1001595569305
+    TG_TOKEN: ENCRYPTED[525a4d7e4426bdaad7b33b8a958d7baaba34378fa92a7e15408031fa8612387af7eb911ce3466cb4e57b8644e69ef7bf]
+
+    # Cirrus Specific Vars (Do *NOT* Change)
+    CIRRUS_SHELL: bash
+
+task:
+  name: "Lineage OS fajita CI"
+  timeout_in: 2000m
+  container:
+      image: ghcr.io/sushrut1101/docker:latest
+      #image: apon77/aosp
+      cpu: 8
+      memory: 32G
+
+  Checks_script:
+      - curl -sL https://raw.githubusercontent.com/snnbyyds/Lineage-CI/main/scripts/checks.sh | bash
+
+  Sync_script:
+      - curl -sL https://raw.githubusercontent.com/snnbyyds/Lineage-CI/main/scripts/sync.sh | bash
+
+  Build_script:
+      - curl -sL https://raw.githubusercontent.com/snnbyyds/Lineage-CI/main/scripts/build.sh | bash
+
+  Upload_script:
+      - export TIMEOUT=43200 # Link timeout (in minutes)
+      - curl -sL https://raw.githubusercontent.com/snnbyyds/Lineage-CI/main/scripts/upload.sh | bash
