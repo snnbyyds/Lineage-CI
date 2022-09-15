@@ -25,7 +25,7 @@ telegram_message() {
 
 # Clone the Sync Repo
 cd ~/android
-repo init -u https://github.com/LineageOS/android.git -b lineage-20.0
+repo init -u https://github.com/LineageOS/android.git -b lineage-19.1
 
 
 # Sync the Sources
